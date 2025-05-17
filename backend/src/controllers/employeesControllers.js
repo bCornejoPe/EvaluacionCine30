@@ -1,8 +1,8 @@
-//Array de metodos (C R U D)
+
 const employeeController = {};
 import employeeModel from "../models/Employees.js";
 
-// SELECT
+
 employeeController.getemployee = async (req, res) => {
   const employee = await employeeModel.find();
   res.json(employee);
@@ -10,7 +10,7 @@ employeeController.getemployee = async (req, res) => {
 
 
 
-// DELETE
+
 employeeController.deleteemployee = async (req, res) => {
 const deletedemployee = await employeeModel.findByIdAndDelete(req.params.id);
   if (!deletedemployee) {
@@ -19,9 +19,9 @@ const deletedemployee = await employeeModel.findByIdAndDelete(req.params.id);
   res.json({ message: "employee deleted" });
 };
 
-// UPDATE
+
 employeeController.updateemployee = async (req, res) => {
-  // Solicito todos los valores
+
   const { name, 
     email,
     password,

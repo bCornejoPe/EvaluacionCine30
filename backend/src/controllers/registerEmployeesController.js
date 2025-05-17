@@ -1,14 +1,18 @@
 
-import employeeModel from "../models/employee.js";
+import employeeModel from "../models/Employees.js";
+
 import bcryptjs from "bcryptjs"; 
 import jsonwebtoken from "jsonwebtoken"; 
 import { config } from "../config.js";
-import registeremployeeController from "./employeesControllers.js";
+
+import employeeController from "./employeesControllers.js";
 
 
-const registeremployeeController = {};
 
-registeremployeeController.register = async(req, res)=> {
+
+const registerEmployeeController = {};
+
+registerEmployeeController.register = async(req, res)=> {
    
     const {name, 
         email,
@@ -34,13 +38,13 @@ registeremployeeController.register = async(req, res)=> {
         const passwordHash = await bcryptjs.hash(password, 10)
 
         const newEmployee = new employeeModel({name, 
-        lastName, 
-        birthday,
         email,
-        address,
         password: passwordHash,
-        hireDate,
         telephone,
+        address,
+        position,
+        hireDate,
+        salary,
         dui,
         isVerified,
         issnumber,

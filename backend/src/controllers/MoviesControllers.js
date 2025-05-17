@@ -45,7 +45,7 @@ moviesController.deleteMovies = async (req, res) => {
 
 moviesController.updateMovies = async (req, res) => {
     //solicito los valores
- const {name, description, price, stock} = req.body;
+ const {tittle, description,director,gender,year,duration} = req.body;
  await moviesModel.findByIdAndUpdate(req.params.id,{tittle, description,director,gender,year,duration}, {new: true});
  let imageURL = "";
 
